@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Health Hub System
 
 A full-stack health management system built with Django (backend) and React (frontend).
@@ -112,3 +113,6 @@ A full-stack health management system built with Django (backend) and React (fro
 
 ## License
 MIT
+=======
+# health
+>>>>>>> 7cc49000e635a7e73f6639424e72b53733f0e08e
