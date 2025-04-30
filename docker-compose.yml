@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./health_system
+    command: gunicorn health_system.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./health_system:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./health_system/.env
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: healthdb
+      POSTGRES_USER: healthuser
+      POSTGRES_PASSWORD: healthpass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data: 
