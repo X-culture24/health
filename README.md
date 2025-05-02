@@ -1,6 +1,6 @@
 # HealthHub
 
-A comprehensive healthcare management system built with Django and PostgreSQL.
+A comprehensive healthcare management system built with Django and Postgresql
 
 ## Features
 
